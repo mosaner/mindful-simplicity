@@ -8,10 +8,10 @@ const Footer = () => {
     <footer className="py-8 bg-studio-dark-gray text-white text-center">
       <div className="container mx-auto">
         <p className="flex items-center justify-center">
-          Made with <Heart className="h-4 w-4 mx-2 text-studio-coral" /> by mindful studio
+          Made with <Heart className="h-4 w-4 mx-2 text-studio-coral" /> by betamind studio
         </p>
         <p className="text-sm mt-2 text-gray-400">
-          &copy; {currentYear} mindful studio. All rights reserved.
+          &copy; {currentYear} betamind studio. All rights reserved.
         </p>
       </div>
     </footer>

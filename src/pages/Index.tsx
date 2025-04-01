@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   useEffect(() => {
-    document.title = "mindful - Digital Innovation Studio";
+    document.title = "betamind - Digital Innovation Studio";
   }, []);
 
   return (
