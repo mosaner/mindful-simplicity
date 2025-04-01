@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="py-8 bg-studio-dark-gray text-white text-center">
       <div className="container mx-auto">
         <p className="flex items-center justify-center">
-          Made with <Heart className="h-4 w-4 mx-2 text-studio-coral" /> by betamind studio
+          Made with <Heart className="h-4 w-4 mx-2 text-studio-coral fill-studio-coral" /> by <span className="font-manrope font-bold ml-2">betamind studio</span>
         </p>
         <p className="text-sm mt-2 text-gray-400">
           &copy; {currentYear} betamind studio. All rights reserved.

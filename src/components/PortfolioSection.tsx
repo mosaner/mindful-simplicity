@@ -15,7 +15,7 @@ const PortfolioSection = () => {
     <section id="portfolio" className="section-spacing">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-studio-blue mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-studio-blue mb-4 font-manrope">
             Solutions that speak for themselves.
           </h2>
           <div className="w-20 h-1 bg-studio-coral mx-auto rounded-full"></div>
@@ -24,7 +24,7 @@ const PortfolioSection = () => {
         {/* Featured Case Study */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
           <div 
-            className="relative bg-white rounded-xl overflow-hidden shadow-md h-[400px]"
+            className="relative bg-white rounded-xl overflow-hidden shadow-md h-[400px] border border-gray-100"
             onMouseEnter={() => setSecretarieHovered(true)}
             onMouseLeave={() => setSecretarieHovered(false)}
           >
@@ -51,7 +51,7 @@ const PortfolioSection = () => {
                   ))}
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/80 px-6 py-3 rounded-lg shadow-sm text-studio-dark-gray font-medium">
+                  <div className="bg-white/90 px-6 py-3 rounded-lg shadow-sm text-studio-dark-gray font-medium">
                     Before: Cluttered Interface
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const PortfolioSection = () => {
           </div>
           
           <div className="flex flex-col justify-center">
-            <h3 className="text-2xl font-bold text-studio-blue mb-4">Secretarie</h3>
+            <h3 className="text-2xl font-bold text-studio-blue mb-4 font-manrope">Secretarie</h3>
             
             <div className="space-y-6">
               <div>
@@ -122,14 +122,14 @@ const PortfolioSection = () => {
         {/* Additional Projects */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {/* Agriculture Project */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-md hover-card-effect">
+          <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-card-effect border border-gray-100">
             <div className="h-48 bg-gradient-to-br from-yellow-100 to-green-100 p-6 flex items-center justify-center">
               <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
                 <div className="w-12 h-12 bg-white/40 rounded-full"></div>
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold text-studio-blue mb-3">AgroSmart</h3>
+              <h3 className="text-xl font-bold text-studio-blue mb-3 font-manrope">AgroSmart</h3>
               <p className="text-gray-600 mb-4">
                 Precision agriculture platform helping farmers optimize crop yields through IoT sensors and predictive analytics.
               </p>
@@ -137,14 +137,14 @@ const PortfolioSection = () => {
           </div>
           
           {/* Education Project */}
-          <div className="bg-white rounded-xl overflow-hidden shadow-md hover-card-effect">
+          <div className="bg-white rounded-xl overflow-hidden shadow-sm hover-card-effect border border-gray-100">
             <div className="h-48 bg-gradient-to-br from-blue-100 to-indigo-100 p-6 flex items-center justify-center">
               <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
                 <div className="w-12 h-12 bg-white/40 rounded-full"></div>
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold text-studio-blue mb-3">EduFlow</h3>
+              <h3 className="text-xl font-bold text-studio-blue mb-3 font-manrope">EduFlow</h3>
               <p className="text-gray-600 mb-4">
                 Personalized learning platform that adapts to each student's pace, learning style, and knowledge gaps.
               </p>
@@ -152,14 +152,14 @@ const PortfolioSection = () => {
           </div>
           
           {/* Next Project Teaser */}
-          <div className="bg-gradient-to-br from-studio-blue to-studio-coral/70 rounded-xl overflow-hidden shadow-md hover-card-effect text-white">
+          <div className="bg-gradient-to-br from-studio-blue to-studio-purple rounded-xl overflow-hidden shadow-sm hover-card-effect text-white border border-gray-100">
             <div className="h-48 flex items-center justify-center p-6">
               <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center">
                 <span className="text-3xl font-bold">?</span>
               </div>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-bold mb-3">Your Project Next?</h3>
+              <h3 className="text-xl font-bold mb-3 font-manrope">Your Project Next?</h3>
               <p className="mb-4 text-white/90">
                 Let's collaborate to transform your complex challenge into an elegant solution.
               </p>

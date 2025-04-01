@@ -12,11 +12,13 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #FF6B6Baa);
 }
+
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #66D7D1aa);
 }
 
 @keyframes logo-spin {
@@ -34,10 +36,24 @@
   }
 }
 
-.card {
-  padding: 2em;
+.gradient-text {
+  background: linear-gradient(90deg, #2D3047, #6B66FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.read-the-docs {
-  color: #888;
+.underline-accent {
+  position: relative;
+}
+
+.underline-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FF6B6B;
+  border-radius: 2px;
 }

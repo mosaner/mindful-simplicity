@@ -16,22 +16,22 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-studio-blue">
-            We simplify the complex. <br />
-            <span className="relative">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-manrope">
+            <span className="gradient-text">We simplify the complex.</span> <br />
+            <span className="relative mt-2 inline-block">
               Let's build solutions that matter.
               <span className="absolute -bottom-2 left-0 right-0 h-1 bg-studio-coral rounded-full"></span>
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-studio-dark-gray mt-6 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-studio-dark-gray mt-6 max-w-2xl mx-auto font-light">
             A digital innovation studio dedicated to making life better—one thoughtful idea at a time.
           </p>
           
           <div className="pt-8">
             <Button 
               onClick={scrollToProjects}
-              className="bg-studio-blue hover:bg-studio-blue/90 text-white text-lg px-8 py-6"
+              className="bg-studio-blue hover:bg-studio-blue/90 text-white text-lg px-8 py-6 font-medium"
             >
               See How We Do It
               <ArrowDown className="ml-2 h-5 w-5" />

@@ -9,7 +9,7 @@ const ApproachSection = () => {
       description: "We listen first. Every problem starts with people."
     },
     {
-      icon: <Lightbulb className="h-12 w-12 text-studio-coral" />,
+      icon: <Lightbulb className="h-12 w-12 text-studio-yellow" />,
       title: "Simplify, Don't Complicate",
       description: "We cut through noise to design solutions that feel obvious."
     },
@@ -24,7 +24,7 @@ const ApproachSection = () => {
     <section id="approach" className="section-spacing bg-studio-light-gray">
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-studio-blue mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-studio-blue mb-4 font-manrope">
             Less is more, but better.
           </h2>
           <div className="w-20 h-1 bg-studio-coral mx-auto rounded-full"></div>
@@ -34,13 +34,13 @@ const ApproachSection = () => {
           {approaches.map((approach, index) => (
             <div 
               key={index}
-              className="bg-white p-8 rounded-lg shadow-sm hover-card-effect"
+              className="bg-white p-8 rounded-lg shadow-sm hover-card-effect backdrop-blur-sm bg-white/80 border border-gray-100"
             >
               <div className="flex flex-col items-center text-center">
                 <div className="mb-6">
                   {approach.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-studio-dark-gray">
+                <h3 className="text-xl font-semibold mb-4 text-studio-dark-gray font-manrope">
                   {approach.title}
                 </h3>
                 <p className="text-gray-600">

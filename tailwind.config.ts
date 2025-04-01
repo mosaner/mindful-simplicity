@@ -64,11 +64,13 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				studio: {
-					"blue": "#203855", 
-					"coral": "#FF7A5A",
-					"green": "#8FD9A8",
-					"light-gray": "#F8F9FA",
-					"dark-gray": "#343A40"
+					"blue": "#2D3047", 
+					"coral": "#FF6B6B",
+					"green": "#66D7D1",
+					"light-gray": "#F7F9FC",
+					"dark-gray": "#2A2C3D",
+					"yellow": "#FFD166",
+					"purple": "#6B66FF"
 				}
 			},
 			borderRadius: {
@@ -124,6 +126,8 @@ export default {
 			},
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
+				'manrope': ['Manrope', 'sans-serif'],
+				'dm-sans': ['"DM Sans"', 'sans-serif']
 			}
 		}
 	},
