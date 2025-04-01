@@ -1,5 +1,5 @@
 
-import { Mail, Phone, Linkedin, Instagram } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -13,41 +13,13 @@ const ContactSection = () => {
         </div>
         
         <div className="max-w-2xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex justify-center">
             <a 
-              href="mailto:hello@betamindstudio.co" 
-              className="flex items-center p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors border border-white/5"
+              href="mailto:hello@betamind.space" 
+              className="flex items-center p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors border border-white/5 w-full max-w-md"
             >
               <Mail className="h-6 w-6 mr-4" />
-              <span>hello@betamindstudio.co</span>
-            </a>
-            
-            <a 
-              href="tel:+15551234567" 
-              className="flex items-center p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors border border-white/5"
-            >
-              <Phone className="h-6 w-6 mr-4" />
-              <span>+1 (555) 123-4567</span>
-            </a>
-            
-            <a 
-              href="https://linkedin.com/company/betamindstudio" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="flex items-center p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors border border-white/5"
-            >
-              <Linkedin className="h-6 w-6 mr-4" />
-              <span>LinkedIn</span>
-            </a>
-            
-            <a 
-              href="https://instagram.com/betamindstudio" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="flex items-center p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors border border-white/5"
-            >
-              <Instagram className="h-6 w-6 mr-4" />
-              <span>Instagram</span>
+              <span>hello@betamind.space</span>
             </a>
           </div>
         </div>
