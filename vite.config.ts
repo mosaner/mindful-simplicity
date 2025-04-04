@@ -17,6 +17,15 @@ export default defineConfig(({ mode }) => ({
   build: {
     // Ensure proper MIME types in build output
     sourcemap: true,
+    rollupOptions: {
+      output: {
+        // Ensure JavaScript files have proper MIME types
+        format: 'es',
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
+      }
+    }
   },
   plugins: [
     react(),
