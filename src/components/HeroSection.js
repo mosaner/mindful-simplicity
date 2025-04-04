@@ -1,0 +1,11 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { ArrowDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+const HeroSection = () => {
+    const scrollToProjects = () => {
+        const element = document.getElementById('portfolio');
+        element?.scrollIntoView({ behavior: 'smooth' });
+    };
+    return (_jsxs("section", { className: "relative min-h-screen flex items-center overflow-hidden", children: [_jsx("div", { className: "absolute top-1/4 -right-36 w-96 h-96 gradient-blob animate-morph animate-float opacity-40" }), _jsx("div", { className: "absolute bottom-1/4 -left-24 w-64 h-64 gradient-blob animate-morph animate-float opacity-30", style: { animationDelay: '2s' } }), _jsx("div", { className: "container mx-auto px-4 relative z-10", children: _jsxs("div", { className: "max-w-3xl mx-auto text-center space-y-8", children: [_jsxs("h1", { className: "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-manrope", children: [_jsx("span", { className: "gradient-text", children: "We simplify the complex." }), " ", _jsx("br", {}), _jsxs("span", { className: "relative mt-2 inline-block", children: ["Let's build solutions that matter.", _jsx("span", { className: "absolute -bottom-2 left-0 right-0 h-1 bg-studio-coral rounded-full" })] })] }), _jsx("p", { className: "text-xl md:text-2xl text-studio-dark-gray mt-6 max-w-2xl mx-auto font-light", children: "A digital innovation studio dedicated to making life better\u2014one thoughtful idea at a time." }), _jsx("div", { className: "pt-8", children: _jsxs(Button, { onClick: scrollToProjects, className: "bg-studio-blue hover:bg-studio-blue/90 text-white text-lg px-8 py-6 font-medium", children: ["See How We Do It", _jsx(ArrowDown, { className: "ml-2 h-5 w-5" })] }) })] }) }), _jsxs("div", { className: "absolute inset-0 z-0 opacity-5", children: [_jsx("div", { className: "grid grid-cols-12 h-full", children: Array.from({ length: 12 }).map((_, i) => (_jsx("div", { className: "border-r border-studio-blue/20 h-full" }, i))) }), _jsx("div", { className: "grid grid-rows-12 h-full w-full absolute top-0", children: Array.from({ length: 12 }).map((_, i) => (_jsx("div", { className: "border-b border-studio-blue/20 w-full" }, i))) })] })] }));
+};
+export default HeroSection;
