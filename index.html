@@ -1,39 +1,1357 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;" />
-    <title>betamind - Digital Innovation Studio</title>
-    <meta name="description" content="A digital innovation studio dedicated to making life better—one thoughtful idea at a time." />
-    <meta name="author" content="betamind studio" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.gpteng.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;" />
+  <title>betamind - Digital Innovation Studio</title>
+  <meta name="description" content="A digital innovation studio dedicated to making life better—one thoughtful idea at a time." />
+  <meta name="author" content="betamind studio" />
 
-    <meta property="og:title" content="betamind - Digital Innovation Studio" />
-    <meta property="og:description" content="A digital innovation studio dedicated to making life better—one thoughtful idea at a time." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <meta property="og:title" content="betamind - Digital Innovation Studio" />
+  <meta property="og:description" content="A digital innovation studio dedicated to making life better—one thoughtful idea at a time." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@lovable_dev" />
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Tailwind-like utility classes */
+    :root {
+      --studio-blue: #2D3047;
+      --studio-coral: #FF6B6B;
+      --studio-dark-gray: #333333;
+      --studio-light-gray: #F5F7FA;
+      --studio-green: #66D7D1;
+      --studio-yellow: #FFD166;
+      --studio-purple: #6B66FF;
+    }
     
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    html {
+      scroll-behavior: smooth;
+    }
     
-    <!-- Base URL for assets in GitHub Pages -->
-    <base href="./">
-  </head>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      line-height: 1.5;
+      color: var(--studio-dark-gray);
+    }
+    
+    .font-manrope {
+      font-family: 'Manrope', sans-serif;
+    }
+    
+    .min-h-screen {
+      min-height: 100vh;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .section-spacing {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+    
+    @media (min-width: 768px) {
+      .section-spacing {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+    }
+    
+    .flex {
+      display: flex;
+    }
+    
+    .items-center {
+      align-items: center;
+    }
+    
+    .justify-center {
+      justify-content: center;
+    }
+    
+    .justify-between {
+      justify-content: space-between;
+    }
+    
+    .flex-col {
+      flex-direction: column;
+    }
+    
+    .relative {
+      position: relative;
+    }
+    
+    .absolute {
+      position: absolute;
+    }
+    
+    .inset-0 {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    
+    .z-0 {
+      z-index: 0;
+    }
+    
+    .z-10 {
+      z-index: 10;
+    }
+    
+    .z-50 {
+      z-index: 50;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    .font-bold {
+      font-weight: 700;
+    }
+    
+    .font-semibold {
+      font-weight: 600;
+    }
+    
+    .font-medium {
+      font-weight: 500;
+    }
+    
+    .font-light {
+      font-weight: 300;
+    }
+    
+    .text-lg {
+      font-size: 1.125rem;
+    }
+    
+    .text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .text-2xl {
+      font-size: 1.5rem;
+    }
+    
+    .text-3xl {
+      font-size: 1.875rem;
+    }
+    
+    .text-4xl {
+      font-size: 2.25rem;
+    }
+    
+    .text-5xl {
+      font-size: 3rem;
+    }
+    
+    .text-6xl {
+      font-size: 3.75rem;
+    }
+    
+    .leading-tight {
+      line-height: 1.25;
+    }
+    
+    .mb-2 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .mb-3 {
+      margin-bottom: 0.75rem;
+    }
+    
+    .mb-4 {
+      margin-bottom: 1rem;
+    }
+    
+    .mb-6 {
+      margin-bottom: 1.5rem;
+    }
+    
+    .mb-8 {
+      margin-bottom: 2rem;
+    }
+    
+    .mb-16 {
+      margin-bottom: 4rem;
+    }
+    
+    .mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .mt-2 {
+      margin-top: 0.5rem;
+    }
+    
+    .mt-6 {
+      margin-top: 1.5rem;
+    }
+    
+    .ml-2 {
+      margin-left: 0.5rem;
+    }
+    
+    .mr-2 {
+      margin-right: 0.5rem;
+    }
+    
+    .mr-4 {
+      margin-right: 1rem;
+    }
+    
+    .max-w-3xl {
+      max-width: 48rem;
+    }
+    
+    .max-w-2xl {
+      max-width: 42rem;
+    }
+    
+    .max-w-md {
+      max-width: 28rem;
+    }
+    
+    .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    
+    .py-3 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    
+    .py-5 {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+    
+    .py-6 {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    
+    .py-8 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    .px-3 {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+    
+    .px-4 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    .px-6 {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    
+    .px-8 {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+    
+    .pt-8 {
+      padding-top: 2rem;
+    }
+    
+    .p-6 {
+      padding: 1.5rem;
+    }
+    
+    .p-8 {
+      padding: 2rem;
+    }
+    
+    .space-y-4 > * + * {
+      margin-top: 1rem;
+    }
+    
+    .space-y-6 > * + * {
+      margin-top: 1.5rem;
+    }
+    
+    .space-y-8 > * + * {
+      margin-top: 2rem;
+    }
+    
+    .space-x-3 > * + * {
+      margin-left: 0.75rem;
+    }
+    
+    .space-x-8 > * + * {
+      margin-left: 2rem;
+    }
+    
+    .grid {
+      display: grid;
+    }
+    
+    .grid-cols-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    
+    .grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    
+    .grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    
+    .grid-cols-12 {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+    
+    .grid-rows-12 {
+      grid-template-rows: repeat(12, minmax(0, 1fr));
+    }
+    
+    .gap-3 {
+      gap: 0.75rem;
+    }
+    
+    .gap-4 {
+      gap: 1rem;
+    }
+    
+    .gap-8 {
+      gap: 2rem;
+    }
+    
+    .gap-12 {
+      gap: 3rem;
+    }
+    
+    .rounded {
+      border-radius: 0.25rem;
+    }
+    
+    .rounded-md {
+      border-radius: 0.375rem;
+    }
+    
+    .rounded-lg {
+      border-radius: 0.5rem;
+    }
+    
+    .rounded-xl {
+      border-radius: 0.75rem;
+    }
+    
+    .rounded-full {
+      border-radius: 9999px;
+    }
+    
+    .border {
+      border-width: 1px;
+    }
+    
+    .border-studio-blue\/20 {
+      border-color: rgba(45, 48, 71, 0.2);
+    }
+    
+    .border-white\/5 {
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+    
+    .border-white\/20 {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .border-gray-100 {
+      border-color: rgba(243, 244, 246, 1);
+    }
+    
+    .h-1 {
+      height: 0.25rem;
+    }
+    
+    .h-4 {
+      height: 1rem;
+    }
+    
+    .h-5 {
+      height: 1.25rem;
+    }
+    
+    .h-6 {
+      height: 1.5rem;
+    }
+    
+    .h-8 {
+      height: 2rem;
+    }
+    
+    .h-10 {
+      height: 2.5rem;
+    }
+    
+    .h-12 {
+      height: 3rem;
+    }
+    
+    .h-16 {
+      height: 4rem;
+    }
+    
+    .h-20 {
+      height: 5rem;
+    }
+    
+    .h-40 {
+      height: 10rem;
+    }
+    
+    .h-48 {
+      height: 12rem;
+    }
+    
+    .h-64 {
+      height: 16rem;
+    }
+    
+    .h-96 {
+      height: 24rem;
+    }
+    
+    .h-full {
+      height: 100%;
+    }
+    
+    .w-4 {
+      width: 1rem;
+    }
+    
+    .w-5 {
+      width: 1.25rem;
+    }
+    
+    .w-6 {
+      width: 1.5rem;
+    }
+    
+    .w-8 {
+      width: 2rem;
+    }
+    
+    .w-10 {
+      width: 2.5rem;
+    }
+    
+    .w-12 {
+      width: 3rem;
+    }
+    
+    .w-20 {
+      width: 5rem;
+    }
+    
+    .w-24 {
+      width: 6rem;
+    }
+    
+    .w-32 {
+      width: 8rem;
+    }
+    
+    .w-64 {
+      width: 16rem;
+    }
+    
+    .w-96 {
+      width: 24rem;
+    }
+    
+    .w-full {
+      width: 100%;
+    }
+    
+    .bg-white {
+      background-color: white;
+    }
+    
+    .bg-white\/10 {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .bg-white\/20 {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .bg-white\/40 {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+    
+    .bg-white\/90 {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .bg-white\/95 {
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .bg-studio-blue {
+      background-color: var(--studio-blue);
+    }
+    
+    .bg-studio-blue\/20 {
+      background-color: rgba(45, 48, 71, 0.2);
+    }
+    
+    .bg-studio-blue\/90 {
+      background-color: rgba(45, 48, 71, 0.9);
+    }
+    
+    .bg-studio-coral {
+      background-color: var(--studio-coral);
+    }
+    
+    .bg-studio-dark-gray {
+      background-color: var(--studio-dark-gray);
+    }
+    
+    .bg-studio-light-gray {
+      background-color: var(--studio-light-gray);
+    }
+    
+    .bg-studio-green {
+      background-color: var(--studio-green);
+    }
+    
+    .bg-studio-green\/20 {
+      background-color: rgba(102, 215, 209, 0.2);
+    }
+    
+    .bg-studio-green\/30 {
+      background-color: rgba(102, 215, 209, 0.3);
+    }
+    
+    .bg-red-200 {
+      background-color: rgba(254, 202, 202, 1);
+    }
+    
+    .bg-transparent {
+      background-color: transparent;
+    }
+    
+    .bg-gradient-to-br {
+      background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+    }
+    
+    .from-studio-blue {
+      --tw-gradient-from: var(--studio-blue);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(45, 48, 71, 0));
+    }
+    
+    .from-studio-green\/30 {
+      --tw-gradient-from: rgba(102, 215, 209, 0.3);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(102, 215, 209, 0));
+    }
+    
+    .from-red-100 {
+      --tw-gradient-from: rgba(254, 226, 226, 1);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(254, 226, 226, 0));
+    }
+    
+    .from-yellow-100 {
+      --tw-gradient-from: rgba(254, 249, 195, 1);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(254, 249, 195, 0));
+    }
+    
+    .from-blue-100 {
+      --tw-gradient-from: rgba(219, 234, 254, 1);
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(219, 234, 254, 0));
+    }
+    
+    .to-studio-blue\/90 {
+      --tw-gradient-to: rgba(45, 48, 71, 0.9);
+    }
+    
+    .to-studio-purple {
+      --tw-gradient-to: var(--studio-purple);
+    }
+    
+    .to-blue-50 {
+      --tw-gradient-to: rgba(239, 246, 255, 1);
+    }
+    
+    .to-red-50 {
+      --tw-gradient-to: rgba(254, 242, 242, 1);
+    }
+    
+    .to-green-100 {
+      --tw-gradient-to: rgba(220, 252, 231, 1);
+    }
+    
+    .to-indigo-100 {
+      --tw-gradient-to: rgba(224, 231, 255, 1);
+    }
+    
+    .text-white {
+      color: white;
+    }
+    
+    .text-white\/90 {
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .text-studio-blue {
+      color: var(--studio-blue);
+    }
+    
+    .text-studio-coral {
+      color: var(--studio-coral);
+    }
+    
+    .text-studio-dark-gray {
+      color: var(--studio-dark-gray);
+    }
+    
+    .text-gray-400 {
+      color: rgba(156, 163, 175, 1);
+    }
+    
+    .text-gray-600 {
+      color: rgba(75, 85, 99, 1);
+    }
+    
+    .shadow-sm {
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+    
+    .shadow-md {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .backdrop-blur-sm {
+      backdrop-filter: blur(4px);
+    }
+    
+    .transition-colors {
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+    
+    .transition-all {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+    
+    .transition-opacity {
+      transition-property: opacity;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+    
+    .duration-300 {
+      transition-duration: 300ms;
+    }
+    
+    .duration-500 {
+      transition-duration: 500ms;
+    }
+    
+    .opacity-5 {
+      opacity: 0.05;
+    }
+    
+    .opacity-30 {
+      opacity: 0.3;
+    }
+    
+    .opacity-40 {
+      opacity: 0.4;
+    }
+    
+    .opacity-0 {
+      opacity: 0;
+    }
+    
+    .opacity-100 {
+      opacity: 1;
+    }
+    
+    .overflow-hidden {
+      overflow: hidden;
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    .fixed {
+      position: fixed;
+    }
+    
+    .top-0 {
+      top: 0;
+    }
+    
+    .top-1\/4 {
+      top: 25%;
+    }
+    
+    .top-full {
+      top: 100%;
+    }
+    
+    .bottom-1\/4 {
+      bottom: 25%;
+    }
+    
+    .left-0 {
+      left: 0;
+    }
+    
+    .right-0 {
+      right: 0;
+    }
+    
+    .-right-36 {
+      right: -9rem;
+    }
+    
+    .-left-24 {
+      left: -6rem;
+    }
+    
+    .inline-block {
+      display: inline-block;
+    }
+    
+    /* Custom effects */
+    .gradient-text {
+      background: linear-gradient(90deg, #2D3047, #6B66FF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .gradient-blob {
+      background: linear-gradient(145deg, #66D7D1, #6B66FF);
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    
+    .animate-morph {
+      animation: morph 8s ease-in-out infinite;
+    }
+    
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .hover-card-effect {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .hover-card-effect:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    @keyframes morph {
+      0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      }
+      25% {
+        border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+      }
+      50% {
+        border-radius: 30% 70% 70% 30% / 70% 30% 70% 30%;
+      }
+      75% {
+        border-radius: 70% 30% 30% 70% / 30% 70% 30% 70%;
+      }
+      100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      }
+    }
+    
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+    
+    /* Button styles */
+    button {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      font-family: inherit;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      text-align: center;
+      white-space: nowrap;
+      border-radius: 0.375rem;
+      transition-property: color, background-color, border-color;
+      transition-duration: 0.15s;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .btn-primary {
+      background-color: var(--studio-blue);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: rgba(45, 48, 71, 0.9);
+    }
+    
+    /* Media queries */
+    @media (min-width: 768px) {
+      .md\:text-2xl {
+        font-size: 1.5rem;
+      }
+      
+      .md\:text-4xl {
+        font-size: 2.25rem;
+      }
+      
+      .md\:text-5xl {
+        font-size: 3rem;
+      }
+      
+      .md\:flex {
+        display: flex;
+      }
+      
+      .md\:hidden {
+        display: none;
+      }
+      
+      .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      
+      .md\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .lg\:text-6xl {
+        font-size: 3.75rem;
+      }
+      
+      .lg\:grid-cols-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      
+      .lg\:grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+  </style>
+</head>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="./src/main.js"></script>
-  </body>
+<body>
+  <div id="root">
+    <div class="min-h-screen">
+      <!-- Header -->
+      <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-5" id="header">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+          <a href="#" class="flex items-center">
+            <span class="text-xl md:text-2xl font-bold font-manrope text-studio-blue">betamind<span class="text-studio-coral">.</span></span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex space-x-8 items-center">
+            <button onclick="scrollToSection('approach')" class="text-studio-dark-gray hover:text-studio-coral transition-colors font-medium">
+              Our Approach
+            </button>
+            <button onclick="scrollToSection('portfolio')" class="text-studio-dark-gray hover:text-studio-coral transition-colors font-medium">
+              Portfolio
+            </button>
+            <button onclick="scrollToSection('contact')" class="btn btn-primary px-4 py-2">
+              Contact Us
+            </button>
+          </nav>
+
+          <!-- Mobile Menu Button -->
+          <button class="md:hidden text-studio-dark-gray" id="mobileMenuButton">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm hidden" id="mobileMenu">
+          <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            <button onclick="scrollToSection('approach'); closeMobileMenu();" class="text-studio-dark-gray py-2 hover:text-studio-coral transition-colors font-medium">
+              Our Approach
+            </button>
+            <button onclick="scrollToSection('portfolio'); closeMobileMenu();" class="text-studio-dark-gray py-2 hover:text-studio-coral transition-colors font-medium">
+              Portfolio
+            </button>
+            <button onclick="scrollToSection('contact'); closeMobileMenu();" class="btn btn-primary w-full py-2">
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute top-1/4 -right-36 w-96 h-96 gradient-blob animate-morph animate-float opacity-40"></div>
+        <div class="absolute bottom-1/4 -left-24 w-64 h-64 gradient-blob animate-morph animate-float opacity-30" style="animation-delay: 2s"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="max-w-3xl mx-auto text-center space-y-8">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-manrope">
+              <span class="gradient-text">We simplify the complex.</span> <br />
+              <span class="relative mt-2 inline-block">
+                Let's build solutions that matter.
+                <span class="absolute -bottom-2 left-0 right-0 h-1 bg-studio-coral rounded-full"></span>
+              </span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-studio-dark-gray mt-6 max-w-2xl mx-auto font-light">
+              A digital innovation studio dedicated to making life better—one thoughtful idea at a time.
+            </p>
+            
+            <div class="pt-8">
+              <button onclick="scrollToSection('portfolio')" class="btn btn-primary text-lg px-8 py-6 font-medium">
+                See How We Do It
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                  <path d="M12 5v14M5 12l7 7 7-7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Abstract Pattern Grid -->
+        <div class="absolute inset-0 z-0 opacity-5">
+          <div class="grid grid-cols-12 h-full">
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+            <div class="border-r border-studio-blue/20 h-full"></div>
+          </div>
+          <div class="grid grid-rows-12 h-full w-full absolute top-0">
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+            <div class="border-b border-studio-blue/20 w-full"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Approach Section -->
+      <section id="approach" class="section-spacing bg-studio-light-gray">
+        <div class="container mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-studio-blue mb-4 font-manrope">
+              Less is more, but better.
+            </h2>
+            <div class="w-20 h-1 bg-studio-coral mx-auto rounded-full"></div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Approach 1 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm hover-card-effect backdrop-blur-sm bg-white/80 border border-gray-100">
+              <div class="flex flex-col items-center text-center">
+                <div class="mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-studio-blue">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-studio-dark-gray font-manrope">
+                  Research with Empathy
+                </h3>
+                <p class="text-gray-600">
+                  We listen first. Every problem starts with people.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Approach 2 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm hover-card-effect backdrop-blur-sm bg-white/80 border border-gray-100">
+              <div class="flex flex-col items-center text-center">
+                <div class="mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-studio-yellow">
+                    <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
+                    <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"></path>
+                    <path d="M9 14h6"></path>
+                    <path d="M9 17h6"></path>
+                    <path d="M11.34 9h.01"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-studio-dark-gray font-manrope">
+                  Simplify, Don't Complicate
+                </h3>
+                <p class="text-gray-600">
+                  We cut through noise to design solutions that feel obvious.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Approach 3 -->
+            <div class="bg-white p-8 rounded-lg shadow-sm hover-card-effect backdrop-blur-sm bg-white/80 border border-gray-100">
+              <div class="flex flex-col items-center text-center">
+                <div class="mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-studio-green">
+                    <path d="M3 3v18h18"></path>
+                    <path d="m19 9-5 5-4-4-3 3"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-semibold mb-4 text-studio-dark-gray font-manrope">
+                  Measure Impact
+                </h3>
+                <p class="text-gray-600">
+                  Success isn't just launch day—it's lasting change.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="section-spacing">
+        <div class="container mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-studio-blue mb-4 font-manrope">
+              Solutions that speak for themselves.
+            </h2>
+            <div class="w-20 h-1 bg-studio-coral mx-auto rounded-full"></div>
+          </div>
+          
+          <!-- Featured Case Study -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+            <div class="relative bg-white rounded-xl overflow-hidden shadow-md h-[400px] border border-gray-100" id="secretarieProject">
+              <!-- Before Image (Cluttered UI) -->
+              <div class="absolute inset-0 transition-opacity duration-500 opacity-100" id="secretarieBefore">
+                <div class="bg-gradient-to-br from-red-100 to-red-50 h-full w-full p-6 flex flex-col">
+                  <div class="flex justify-between mb-4">
+                    <div class="w-32 h-5 bg-red-200 rounded"></div>
+                    <div class="w-24 h-5 bg-red-200 rounded"></div>
+                  </div>
+                  <div class="grid grid-cols-3 gap-3 mb-4">
+                    <div class="bg-red-200 h-12 rounded"></div>
+                    <div class="bg-red-200 h-12 rounded"></div>
+                    <div class="bg-red-200 h-12 rounded"></div>
+                    <div class="bg-red-200 h-12 rounded"></div>
+                    <div class="bg-red-200 h-12 rounded"></div>
+                    <div class="bg-red-200 h-12 rounded"></div>
+                  </div>
+                  <div class="h-40 bg-red-200 rounded mb-4"></div>
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-red-200 h-16 rounded"></div>
+                    <div class="bg-red-200 h-16 rounded"></div>
+                    <div class="bg-red-200 h-16 rounded"></div>
+                    <div class="bg-red-200 h-16 rounded"></div>
+                  </div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="bg-white/90 px-6 py-3 rounded-lg shadow-sm text-studio-dark-gray font-medium">
+                      Before: Cluttered Interface
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- After Image (Streamlined Dashboard) -->
+              <div class="absolute inset-0 transition-opacity duration-500 opacity-0" id="secretarieAfter">
+                <div class="bg-gradient-to-br from-studio-green/30 to-blue-50 h-full w-full p-6 flex flex-col">
+                  <div class="flex justify-between mb-6">
+                    <div class="w-32 h-6 bg-studio-green rounded-md"></div>
+                    <div class="flex space-x-3">
+                      <div class="w-8 h-8 bg-white rounded-full shadow-sm"></div>
+                      <div class="w-8 h-8 bg-white rounded-full shadow-sm"></div>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div class="bg-white h-20 rounded-lg shadow-sm flex items-center justify-center">
+                      <div class="w-10 h-10 bg-studio-green/20 rounded-full"></div>
+                    </div>
+                    <div class="bg-white h-20 rounded-lg shadow-sm flex items-center justify-center">
+                      <div class="w-10 h-10 bg-studio-green/20 rounded-full"></div>
+                    </div>
+                    <div class="bg-white h-20 rounded-lg shadow-sm flex items-center justify-center">
+                      <div class="w-10 h-10 bg-studio-green/20 rounded-full"></div>
+                    </div>
+                  </div>
+                  <div class="h-48 bg-white rounded-lg shadow-sm mb-6"></div>
+                  <div class="h-16 bg-white rounded-lg shadow-sm"></div>
+                  <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="bg-white/90 px-6 py-3 rounded-lg shadow-sm text-studio-blue font-medium">
+                      After: Streamlined Interface
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="flex flex-col justify-center">
+              <h3 class="text-2xl font-bold text-studio-blue mb-4 font-manrope">Secretarie</h3>
+              
+              <div class="space-y-6">
+                <div>
+                  <h4 class="text-lg font-semibold text-studio-dark-gray mb-2">Problem:</h4>
+                  <p class="text-gray-600">
+                    Health professionals waste hours juggling patient data, appointments, and follow-ups.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 class="text-lg font-semibold text-studio-dark-gray mb-2">Solution:</h4>
+                  <p class="text-gray-600">
+                    An intuitive platform automating patient management with AI-driven scheduling, 
+                    progress tracking, and telehealth integration.
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 class="text-lg font-semibold text-studio-dark-gray mb-2">Outcome:</h4>
+                  <p class="text-gray-600">
+                    Reduced administrative workload by 40%, improved patient retention by 25%.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Additional Projects -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Agriculture Project -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover-card-effect border border-gray-100">
+              <div class="h-48 bg-gradient-to-br from-yellow-100 to-green-100 p-6 flex items-center justify-center">
+                <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
+                  <div class="w-12 h-12 bg-white/40 rounded-full"></div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-studio-blue mb-3 font-manrope">AgroSmart</h3>
+                <p class="text-gray-600 mb-4">
+                  Precision agriculture platform helping farmers optimize crop yields through IoT sensors and predictive analytics.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Education Project -->
+            <div class="bg-white rounded-xl overflow-hidden shadow-sm hover-card-effect border border-gray-100">
+              <div class="h-48 bg-gradient-to-br from-blue-100 to-indigo-100 p-6 flex items-center justify-center">
+                <div class="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center">
+                  <div class="w-12 h-12 bg-white/40 rounded-full"></div>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-studio-blue mb-3 font-manrope">EduFlow</h3>
+                <p class="text-gray-600 mb-4">
+                  Personalized learning platform that adapts to each student's pace, learning style, and knowledge gaps.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Next Project Teaser -->
+            <div class="bg-gradient-to-br from-studio-blue to-studio-purple rounded-xl overflow-hidden shadow-sm hover-card-effect text-white border border-gray-100">
+              <div class="h-48 flex items-center justify-center p-6">
+                <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center">
+                  <span class="text-3xl font-bold">?</span>
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 font-manrope">Your Project Next?</h3>
+                <p class="mb-4 text-white/90">
+                  Let's collaborate to transform your complex challenge into an elegant solution.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <button onclick="scrollToSection('contact')" class="btn btn-primary px-8 py-6 text-lg">
+              Have a problem? Let's solve it
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section-spacing bg-gradient-to-br from-studio-blue to-studio-blue/90 text-white">
+        <div class="container mx-auto">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 font-manrope">
+              Simple problems. Big solutions. Let's chat.
+            </h2>
+            <div class="w-20 h-1 bg-studio-coral mx-auto rounded-full"></div>
+          </div>
+          
+          <div class="max-w-2xl mx-auto">
+            <div class="flex justify-center">
+              <a 
+                href="mailto:hello@betamind.space" 
+                class="flex items-center p-6 bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-colors border border-white/5 w-full max-w-md"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-4">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <span>hello@betamind.space</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-8 bg-studio-dark-gray text-white text-center">
+        <div class="container mx-auto">
+          <p class="flex items-center justify-center">
+            Made with 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--studio-coral)" stroke="var(--studio-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-2">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+            by <span class="font-manrope font-bold ml-2">betamind studio</span>
+          </p>
+          <p class="text-sm mt-2 text-gray-400">
+            &copy; <span id="currentYear"></span> betamind studio. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  
+  <script>
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Mobile menu toggle
+    const mobileMenuButton = document.getElementById('mobileMenuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const header = document.getElementById('header');
+    
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      
+      // Update the icon
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenuButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+      } else {
+        mobileMenuButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+      }
+    });
+    
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      mobileMenuButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+    }
+    
+    // Scroll to section
+    function scrollToSection(id) {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.remove('bg-transparent', 'py-5');
+        header.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-sm', 'py-3');
+      } else {
+        header.classList.add('bg-transparent', 'py-5');
+        header.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-sm', 'py-3');
+      }
+    });
+    
+    // Secretarie project hover effect
+    const secretarieProject = document.getElementById('secretarieProject');
+    const secretarieBefore = document.getElementById('secretarieBefore');
+    const secretarieAfter = document.getElementById('secretarieAfter');
+    
+    secretarieProject.addEventListener('mouseenter', () => {
+      secretarieBefore.classList.remove('opacity-100');
+      secretarieBefore.classList.add('opacity-0');
+      secretarieAfter.classList.remove('opacity-0');
+      secretarieAfter.classList.add('opacity-100');
+    });
+    
+    secretarieProject.addEventListener('mouseleave', () => {
+      secretarieBefore.classList.add('opacity-100');
+      secretarieBefore.classList.remove('opacity-0');
+      secretarieAfter.classList.add('opacity-0');
+      secretarieAfter.classList.remove('opacity-100');
+    });
+  </script>
+</body>
 </html>
